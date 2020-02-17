@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class WorkFragment extends Fragment {
+public class JobFragment extends Fragment {
 
 
-    public WorkFragment() {
+    public JobFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class WorkFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_work, container, false);
+        return inflater.inflate(R.layout.fragment_job, container, false);
     }
 
 }
