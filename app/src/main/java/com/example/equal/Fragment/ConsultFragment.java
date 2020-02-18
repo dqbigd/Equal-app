@@ -1,4 +1,4 @@
-package com.example.equal;
+package com.example.equal.Fragment;
 
 
 import android.os.Bundle;
@@ -9,14 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.equal.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AccountFragment extends Fragment {
+public class ConsultFragment extends Fragment {
 
 
-    public AccountFragment() {
+    public ConsultFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +27,7 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        return inflater.inflate(R.layout.fragment_consult, container, false);
     }
 
 }

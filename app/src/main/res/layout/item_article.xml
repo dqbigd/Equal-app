@@ -8,21 +8,52 @@
     android:layout_marginRight="16dp"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="230dp"
         android:layout_height="450dp"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@color/colorGrayDark">
 
-        <ImageView
-            android:id="@+id/imgPromo"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:src="@color/colorPrimary">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp">
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/imgPromo"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:src="@color/colorPrimary">
+
+            </ImageView>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:maxLines="4"
+            android:textColor="@android:color/black"
+            android:text="Desc"/>
 
     </LinearLayout>
 

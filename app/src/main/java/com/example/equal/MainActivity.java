@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.equal.Fragment.AccountFragment;
+import com.example.equal.Fragment.ConsultFragment;
+import com.example.equal.Fragment.HomeFragment;
+import com.example.equal.Fragment.JobFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment">
+    tools:context=".Fragment.HomeFragment">
 
     <LinearLayout
         android:id="@+id/lyProfile"
@@ -53,7 +53,7 @@
             android:layout_height="75dp"
             android:layout_weight="0.2"
             android:padding="16dp"
-            android:src="@drawable/dummy_photo"/>
+            android:src="@drawable/ic_alarm_white"/>
 
     </LinearLayout>
 
@@ -61,8 +61,8 @@
         android:id="@+id/rvArticle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_promo"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromo">
+        tools:listitem="@layout/item_article"
+        android:layout_marginTop="175dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 
