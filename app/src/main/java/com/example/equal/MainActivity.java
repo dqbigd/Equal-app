@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.menu_consult:
                 fragment = new ConsultFragment();
                 break;
-            case R.id.menu_work:
+            case R.id.menu_job:
                 fragment = new JobFragment();
                 break;
 

@@ -9,6 +9,8 @@ public class Preferences  {
 
     private static final String ID = "id_user";
     private static final String LOGGED_IN = "logged_in";
+    private static final String NAME = "name";
+    private static final String EMAIL = "email";
 
     private final SharedPreferences preference;
 
@@ -35,6 +37,26 @@ public class Preferences  {
 
         return id;
     }
+
+    public void setProfile(String name, String email){
+        SharedPreferences.Editor editor = preference.edit();
+        editor.putString(NAME, name);
+        editor.putString(EMAIL, email);
+        editor.apply();
+    }
+
+    public String getName(){
+        String name = preference.getString(NAME, "");
+
+        return name;
+    }
+
+    public String getEmail(){
+        String email = preference.getString(EMAIL, "");
+
+        return email;
+    }
+
 
 
 }

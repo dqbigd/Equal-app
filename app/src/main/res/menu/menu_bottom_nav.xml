@@ -7,13 +7,13 @@
 
     <item
         android:id="@+id/menu_consult"
-        android:title="Gizi Anak"
-        android:icon="@drawable/ic_home_black_24dp"/>
+        android:title="Konsultasi"
+        android:icon="@drawable/ic_chat_black"/>
 
     <item
-        android:id="@+id/menu_work"
-        android:title="Ibu Hamil"
-        android:icon="@drawable/ic_home_black_24dp"/>
+        android:id="@+id/menu_job"
+        android:title="Loker"
+        android:icon="@drawable/ic_job_black"/>
 
     <item
         android:id="@+id/menu_account"

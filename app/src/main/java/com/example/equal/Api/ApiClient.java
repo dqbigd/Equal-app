@@ -1,4 +1,4 @@
-package com.example.equal;
+package com.example.equal.Api;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
