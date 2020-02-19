@@ -10,9 +10,12 @@ import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.equal.Api.ApiClient;
 import com.example.equal.Api.ApiInterface;
@@ -33,9 +36,10 @@ import retrofit2.Response;
  */
 public class HomeFragment extends Fragment {
     private RecyclerView rvArticle;
-    
+
+    private ArrayList<Article> articleList = new ArrayList<>();
+    private ArticleAdapter articleAdapter;
     final ApiInterface apiInterface = ApiClient.getRetrofit().create(ApiInterface.class);
-    private String key_api = "PdSgVkYp3s6v9y$B";
 
     public HomeFragment() {
         // Required empty public constructor
@@ -46,14 +50,13 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        loadArticle();
         //recyclerview
         rvArticle = view.findViewById(R.id.rvArticle);
 //        rvArticle.setHasFixedSize(true);
-//        list.addAll(PromoData.getListData());
-//        snapRecyclerView();
-//        recyclerProperties();
-
+        snapRecyclerView();
+        rvArticle.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        rvArticle.setAdapter(articleAdapter);
+        loadArticle();
 
         return view;
     }
@@ -65,18 +68,27 @@ public class HomeFragment extends Fragment {
         dialog.setCancelable(false);
         dialog.show();
 
-        Call<Article> call = apiInterface.getArticle(key_api+"/article/");
-        call.enqueue(new Callback<Article>() {
+        Call<List<Article>> call = apiInterface.getArticle();
+        call.enqueue(new Callback<List<Article>>() {
             @Override
-            public void onResponse(Call<Article> call, Response<Article> response) {
-                dialog.hide();
-                articleList = new ArrayList<>();
-                articleList = response.body().getId();
+            public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
+                if (response.isSuccessful()){
+                    dialog.hide();
+                    articleList = new ArrayList<>(response.body());
+                    articleAdapter = new ArticleAdapter(articleList);
+                    rvArticle.setAdapter(articleAdapter);
+                    Log.d("Success ", response.body().toString());
+                }else {
+                    Toast.makeText(getActivity(), response.errorBody().toString(), Toast.LENGTH_SHORT).show();
+                    Log.d("Response Error", response.errorBody().toString());
+                }
+
             }
 
             @Override
-            public void onFailure(Call<Article> call, Throwable t) {
-
+            public void onFailure(Call<List<Article>> call, Throwable t) {
+                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("Failure Load", t.getMessage());
             }
         });
 
@@ -88,10 +100,5 @@ public class HomeFragment extends Fragment {
 
     }
 
-//    private void recyclerProperties() {
-//        rvArticle.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-//        ArticleAdapter articleAdapter= new ArticleAdapter(list);
-//        rvArticle.setAdapter(promoAdapter);
-//    }
 
 }
