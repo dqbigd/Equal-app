@@ -6,9 +6,11 @@
     tools:context=".Fragment.AccountFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/btnMetu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Account fragmenr" />
+        android:layout_height="wrap_content"
+        android:text="METU"
+        android:background="@color/colorGreen"/>
 
 </FrameLayout>

@@ -2,6 +2,7 @@ package com.example.equal.Fragment;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,14 +15,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.equal.Api.ApiClient;
 import com.example.equal.Api.ApiInterface;
 import com.example.equal.ArticleAdapter;
+import com.example.equal.LaporActivity;
 import com.example.equal.Model.Article;
 import com.example.equal.R;
+import com.example.equal.SignUpActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +40,7 @@ import retrofit2.Response;
  */
 public class HomeFragment extends Fragment {
     private RecyclerView rvArticle;
+    private ImageView imgLapor;
 
     private ArrayList<Article> articleList = new ArrayList<>();
     private ArticleAdapter articleAdapter;
@@ -50,13 +55,23 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //recyclerview
+        imgLapor = view.findViewById(R.id.imgLapor);
         rvArticle = view.findViewById(R.id.rvArticle);
+
+        //recyclerview
 //        rvArticle.setHasFixedSize(true);
         snapRecyclerView();
         rvArticle.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
         rvArticle.setAdapter(articleAdapter);
         loadArticle();
+
+        imgLapor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), LaporActivity.class);
+                startActivity(i);
+            }
+        });
 
         return view;
     }
@@ -65,7 +80,7 @@ public class HomeFragment extends Fragment {
         final ProgressDialog dialog = new ProgressDialog(getContext());
         dialog.setTitle("Memuat Artikel");
         dialog.setMessage("Loading ...");
-        dialog.setCancelable(false);
+        dialog.setCancelable(true);
         dialog.show();
 
         Call<List<Article>> call = apiInterface.getArticle();
@@ -87,7 +102,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Article>> call, Throwable t) {
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.d("Failure Load", t.getMessage());
             }
         });

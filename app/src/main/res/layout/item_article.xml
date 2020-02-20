@@ -14,7 +14,7 @@
     <LinearLayout
         android:layout_width="230dp"
         android:layout_height="450dp"
-        android:padding="16dp"
+        android:padding="15dp"
         android:orientation="vertical"
         android:background="@color/colorGrayDark">
 
@@ -27,7 +27,7 @@
 
             <ImageView
                 android:id="@+id/imgArticle"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="130dp"
                 android:src="@color/colorPrimary">
 

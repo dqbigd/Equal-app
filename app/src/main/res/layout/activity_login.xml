@@ -122,7 +122,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
-            android:background="@color/colorAccent"
+            android:background="@color/colorGreen"
             android:text="Daftar"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"

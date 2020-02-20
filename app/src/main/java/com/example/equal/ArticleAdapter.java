@@ -1,6 +1,8 @@
 package com.example.equal;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleHolder> {
     private ArrayList<Article> listArticle ;
     private Context context;
+    private String getTitle, getDescrib, getPhoto;
 
     public ArticleAdapter(ArrayList<Article> list){
         this.listArticle = list;
@@ -32,14 +35,35 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ArticleHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ArticleHolder holder, int position) {
         Article article = listArticle.get(position);
 
+        //link sementara
+        String link = article.getPhoto();
+        link = "http://10.0.2.2:8000/images/articles/"+link;
+        Log.d("link", link);
+
         Glide.with(holder.itemView.getContext())
-                .load(article.getPhoto())
+                .load(link)
                 .into(holder.imgPhoto);
         holder.tvTitle.setText(article.getTitle());
         holder.tvDesc.setText(article.getDesc());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentDetail = new Intent(context, DetailArticleActivity.class);
+                getTitle = listArticle.get(holder.getAdapterPosition()).getTitle();
+                getDescrib = listArticle.get(holder.getAdapterPosition()).getDesc();
+                getPhoto = listArticle.get(holder.getAdapterPosition()).getPhoto();
+
+                intentDetail.putExtra("ARTICLE_DETAIL_TITLE", getTitle);
+                intentDetail.putExtra("ARTICLE_DETAIL_DESCRIB", getDescrib);
+                intentDetail.putExtra("ARTICLE_DETAIL_PHOTO", getPhoto);
+
+                context.startActivity(intentDetail);
+            }
+        });
 
     }
 

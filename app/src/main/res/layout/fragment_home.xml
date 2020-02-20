@@ -1,69 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.HomeFragment">
 
-    <LinearLayout
-        android:id="@+id/lyProfile"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/square_pink_no_radius_top"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lyProfile"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/square_pink_no_radius_top"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        </LinearLayout>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:clickable="true"
-            android:padding="16dp"
-            android:layout_weight="0.2"
-            android:src="@drawable/dummy_photo">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
-        </de.hdodenhof.circleimageview.CircleImageView>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:clickable="true"
+                android:padding="16dp"
+                android:layout_weight="0.2"
+                android:src="@drawable/dummy_photo">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6"
-            android:gravity="center"
-            android:minHeight="?actionBarSize"
-            android:padding="16dp"
-            android:text="Artikel Terbaru"
-            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
-            android:textColor="@android:color/white"
-            android:textSize="25sp" />
+            </de.hdodenhof.circleimageview.CircleImageView>
 
-        <ImageView
-            android:id="@+id/imgLapor"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_weight="0.2"
-            android:padding="16dp"
-            android:src="@drawable/ic_alarm_white"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:gravity="center"
+                android:minHeight="?actionBarSize"
+                android:padding="16dp"
+                android:text="Artikel Terbaru"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imgLapor"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_weight="0.2"
+                android:clickable="true"
+                android:padding="16dp"
+                android:src="@drawable/ic_alarm_white"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvArticle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/item_article"
-        android:layout_marginTop="130dp">
+        </LinearLayout>
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_article"
+            android:layout_marginTop="130dp">
 
-</FrameLayout>
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </FrameLayout>
+
+</ScrollView>

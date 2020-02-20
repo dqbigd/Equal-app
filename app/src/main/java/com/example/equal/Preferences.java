@@ -14,11 +14,11 @@ public class Preferences  {
 
     private final SharedPreferences preference;
 
-    Preferences(Context context){
+    public Preferences(Context context){
         preference = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
 
-    public void setLoggedIn(boolean status, int id){
+    public void setLoggedIn(boolean status, Integer id){
         SharedPreferences.Editor editor = preference.edit();
         editor.putInt(ID, id);
         editor.putBoolean(LOGGED_IN, status);
