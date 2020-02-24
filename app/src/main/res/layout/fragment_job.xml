@@ -3,12 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.JobFragment">
+    tools:context=".Fragment.JobFragment"
+    android:background="@color/colorGrayLight">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Work fragmenr" />
+        android:layout_height="100dp"
+        android:background="@drawable/square_pink_no_radius_top"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:text="Lowongan Kerja"
+            android:textSize="25sp"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_job"
+        android:layout_marginTop="100dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </FrameLayout>

@@ -30,6 +30,6 @@ public interface ApiInterface {
     @GET(key_api+"/article/")
     Call<List<Article>> getArticle();
 
-    @GET
-    Call<Job> getJob(@Url String url);
+    @GET(key_api+"/job/")
+    Call<List<Job>> getJob();
 }

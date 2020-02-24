@@ -46,7 +46,7 @@
                 android:gravity="center"
                 android:minHeight="?actionBarSize"
                 android:padding="16dp"
-                android:text="Artikel Terbaru"
+                android:text="@string/artikel_terbaru"
                 android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
                 android:textColor="@android:color/white"
                 android:textSize="25sp" />

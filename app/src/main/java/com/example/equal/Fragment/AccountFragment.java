@@ -38,7 +38,7 @@ public class AccountFragment extends Fragment {
             public void onClick(View view) {
                 final Preferences preferences = new Preferences(getContext());
 
-                preferences.setLoggedIn(false, null);
+                preferences.setLoggedIn(false, 0);
                 preferences.setProfile("", "");
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
