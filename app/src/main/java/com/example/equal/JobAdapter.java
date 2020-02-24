@@ -47,7 +47,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
                 .into(holder.imgLogo);
         holder.tvTitle.setText(job.getTitle());
 
-        
+
 
     }
 
