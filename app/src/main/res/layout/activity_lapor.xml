@@ -1,147 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LaporActivity">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/square_pink_no_radius_top"
-        android:orientation="vertical"
-        android:gravity="center">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="?actionBarSize">
-
-            <ImageButton
-                android:id="@+id/imgBackButton"
-                android:layout_width="wrap_content"
-                android:layout_height="?actionBarSize"
-                android:background="@color/colorPrimary"
-                android:clickable="true"
-                android:padding="16dp"
-                android:src="@drawable/ic_keyboard_arrow_left_24px">
-
-            </ImageButton>
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:minHeight="?actionBarSize"
-                android:padding="16dp"
-                android:textColor="@android:color/white"
-                android:text="@string/lapor_kdrt"
-                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
-
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/square_pink_no_radius_top"
+            android:orientation="vertical"
+            android:gravity="center">
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/input_bg"
-                android:padding="8dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtNama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableStart="@drawable/ic_account_circle_24px"
-                    android:drawablePadding="16dp"
-                    android:hint="@string/nama_lengkap"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:inputType="text"
-                    android:paddingBottom="12dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/input_bg"
-                android:padding="8dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtAlamat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableStart="@drawable/ic_address"
-                    android:drawablePadding="16dp"
-                    android:hint="@string/lokasi"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:inputType="text"
-                    android:paddingBottom="12dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/input_bg"
-                android:padding="8dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtKronologi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableStart="@drawable/ic_info_outline_black_24dp"
-                    android:drawablePadding="16dp"
-                    android:hint="Keterangan / Kronologi"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:inputType="text"
-                    android:paddingBottom="12dp"
-                    android:maxLines="5"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
             <LinearLayout
-                android:id="@+id/lyLapor"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:background="@drawable/bg_round_button"
-                android:layout_gravity="center"
-                android:layout_marginTop="36dp">
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/ic_alarm_white"
-                    android:layout_gravity="center" />
+                <ImageButton
+                    android:id="@+id/imgBackButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?actionBarSize"
+                    android:background="@color/colorPrimary"
+                    android:clickable="true"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_keyboard_arrow_left_24px">
+
+                </ImageButton>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="?actionBarSize"
+                    android:padding="16dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/lapor_kdrt"
+                    android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/input_bg"
+                    android:padding="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_account_circle_24px"
+                        android:drawablePadding="16dp"
+                        android:hint="@string/nama_lengkap"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:inputType="text"
+                        android:paddingBottom="12dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/input_bg"
+                    android:padding="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_address"
+                        android:drawablePadding="16dp"
+                        android:hint="@string/lokasi"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:inputType="text"
+                        android:paddingBottom="12dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/input_bg"
+                    android:padding="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtKronologi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_info_outline_black_24dp"
+                        android:drawablePadding="16dp"
+                        android:hint="Keterangan / Kronologi"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:inputType="text"
+                        android:paddingBottom="12dp"
+                        android:maxLines="5"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyLapor"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/bg_round_button"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="36dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_alarm_white"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-
-
-</FrameLayout>
+    </FrameLayout>
+</ScrollView>
