@@ -6,11 +6,133 @@
     tools:context=".Fragment.AccountFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/btnMetu"
+
+    <LinearLayout
+        android:id="@+id/lyaccount"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/square_pink_no_radius_top"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgaccount"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/dummy_photo">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/tvHallo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="100dp"
+            android:text="Hallo Saya"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNamaprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:text="Marina Putri"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNamap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="METU"
-        android:background="@color/colorGreen"/>
+        android:layout_marginTop="318dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Nama"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvNamamarina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="348dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Marina Putri"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tvEmailprofile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Email"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tvemailpengguna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="MarinaPutri@gmail.com"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
+
+    <ImageView
+        android:id="@+id/separator_1"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="464dp"
+        android:background="@color/colorGrayLight" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="484dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Edit Profil"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/separator_2"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="524dp"
+        android:background="@color/colorGrayLight" />
+
+    <TextView
+        android:id="@+id/tvloker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="548dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Loker Tersimpan"
+        android:textSize="22sp"/>
+
+    <ImageView
+        android:id="@+id/separator_3"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="600dp"
+        android:background="@color/colorGrayLight" />
+
+
+
+
 
 </FrameLayout>
