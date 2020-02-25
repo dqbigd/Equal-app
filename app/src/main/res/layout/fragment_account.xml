@@ -1,138 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.AccountFragment">
+    tools:context=".Fragment.AccountFragment"
+    android:background="@color/colorGrayLight"
+    android:layout_marginBottom="48dp">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
-        android:id="@+id/lyaccount"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/square_pink_no_radius_top"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgaccount"
+        <LinearLayout
+            android:id="@+id/lyaccount"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/dummy_photo">
+            android:layout_height="300dp"
+            android:background="@drawable/square_pink_no_radius_top"
+            android:orientation="vertical"
+            android:gravity="center">
 
-        </de.hdodenhof.circleimageview.CircleImageView>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgAccount"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dummy_photo">
 
-        <TextView
-            android:id="@+id/tvHallo"
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/tvHallo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Hallo Saya"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvNamaAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marina Putri"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="100dp"
-            android:text="Hallo Saya"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:layout_marginTop="300dp">
 
-        <TextView
-            android:id="@+id/tvNamaprofile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:text="Marina Putri"
-            android:textColor="@android:color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@android:color/white">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"/>
 
-    <TextView
-        android:id="@+id/tvNamap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="318dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Nama"
-        android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvNama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marina Putri"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
 
-    <TextView
-        android:id="@+id/tvNamamarina"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="348dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Marina Putri"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"/>
 
-    <TextView
-        android:id="@+id/tvEmailprofile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="384dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Email"
-        android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="MarinaPutri@gmail.com"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
 
-    <TextView
-        android:id="@+id/tvemailpengguna"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="MarinaPutri@gmail.com"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lyEditProfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/white">
 
-    <ImageView
-        android:id="@+id/separator_1"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:layout_marginTop="464dp"
-        android:background="@color/colorGrayLight" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profil"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:padding="16dp"
+                    android:background="?android:attr/selectableItemBackground"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="484dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Edit Profil"
-        android:textSize="22sp" />
+            </LinearLayout>
 
-    <ImageView
-        android:id="@+id/separator_2"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:layout_marginTop="524dp"
-        android:background="@color/colorGrayLight" />
+            <LinearLayout
+                android:id="@+id/lyLokerSimpan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/tvloker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="548dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Loker Tersimpan"
-        android:textSize="22sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loker Tersimpan"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="16dp"
+                    android:background="?android:attr/selectableItemBackground"/>
+            </LinearLayout>
 
-    <ImageView
-        android:id="@+id/separator_3"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:layout_marginTop="600dp"
-        android:background="@color/colorGrayLight" />
+            <LinearLayout
+                android:id="@+id/lyKeluar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/tvKeluar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Keluar"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="16dp"
+                    android:background="?android:attr/selectableItemBackground"/>
+            </LinearLayout>
 
 
+        </LinearLayout>
 
-
-
-</FrameLayout>
+    </FrameLayout>
+</ScrollView>

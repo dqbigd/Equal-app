@@ -68,8 +68,8 @@ public class LaporActivity extends AppCompatActivity {
 
         if(validation){
             String recipients = "mabes@polri.go.id";
-            String subject = "Laporan KDRT ";
-            String message = "Nama : "+nama+"/nLokasi : "+lokasi+"/nKeterangan / kronologi : "+keterangan;
+            String subject = "Laporan KDRT";
+            String message = "Nama : "+nama+"\nLokasi : "+lokasi+"\nKeterangan / kronologi : "+keterangan;
 
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.putExtra(Intent.EXTRA_EMAIL, recipients);

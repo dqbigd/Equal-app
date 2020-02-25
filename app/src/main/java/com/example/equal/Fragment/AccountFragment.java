@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.equal.LoginActivity;
 import com.example.equal.Preferences;
@@ -21,7 +22,8 @@ import com.example.equal.R;
  * A simple {@link Fragment} subclass.
  */
 public class AccountFragment extends Fragment {
-    Button btnMetu;
+    LinearLayout lyEditProfile, lyLokerSimpan, lyKeluar;
+    TextView tvNamaAccount, tvNama, tvEmail;
     public AccountFragment() {
         // Required empty public constructor
     }
@@ -31,9 +33,19 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
 
-        btnMetu = view.findViewById(R.id.btnMetu);
+        tvNamaAccount = view.findViewById(R.id.tvNamaAccount);
+        tvNama = view.findViewById(R.id.tvNama);
+        tvEmail = view.findViewById(R.id.tvEmail);
+        lyEditProfile = view.findViewById(R.id.lyEditProfil);
+        lyLokerSimpan = view.findViewById(R.id.lyLokerSimpan);
+        lyKeluar = view.findViewById(R.id.lyKeluar);
 
-        btnMetu.setOnClickListener(new View.OnClickListener() {
+        final Preferences preferences = new Preferences(getContext());
+        tvNamaAccount.setText(preferences.getName());
+        tvNama.setText(preferences.getName());
+        tvEmail.setText(preferences.getEmail());
+
+        lyKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Preferences preferences = new Preferences(getContext());
