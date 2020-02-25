@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,15 +40,13 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
 
         //link sementara
         String link = job.getPhotoLogo();
-        link = "http://10.0.2.2:8000/images/articles/"+link;
+        link = "http://10.0.2.2:8000/images/jobs/"+link;
         Log.d("link", link);
 
         Glide.with(holder.itemView.getContext())
                 .load(link)
                 .into(holder.imgLogo);
         holder.tvTitle.setText(job.getTitle());
-
-
 
     }
 
@@ -57,13 +56,13 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
     }
 
     public class JobHolder extends RecyclerView.ViewHolder {
-        CircleImageView imgLogo;
+        ImageView imgLogo;
         TextView tvTitle;
 
         public JobHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.findViewById(R.id.imgJob);
-            itemView.findViewById(R.id.tvTitleJob);
+            imgLogo = itemView.findViewById(R.id.imgJob);
+            tvTitle = itemView.findViewById(R.id.tvTitleJob);
         }
     }
 }
