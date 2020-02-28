@@ -1,84 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailArticleActivity">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            style="AppTheme.AppBarOverlay">
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="AppTheme.AppBarOverlay">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize">
 
-                <LinearLayout
+                <ImageButton
+                    android:id="@+id/imgBackButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="?actionBarSize">
+                    android:layout_height="?actionBarSize"
+                    android:background="@color/colorPrimary"
+                    android:clickable="true"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_keyboard_arrow_left_24px">
 
-                    <ImageButton
-                        android:id="@+id/imgBackButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="?actionBarSize"
-                        android:background="@color/colorPrimary"
-                        android:clickable="true"
-                        android:padding="16dp"
-                        android:src="@drawable/ic_keyboard_arrow_left_24px">
+                </ImageButton>
 
-                    </ImageButton>
-
-                    <TextView
-                        android:id="@+id/tvTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:minHeight="?actionBarSize"
-                        android:padding="16dp"
-                        android:textColor="@android:color/white"
-                        android:text="Detail Artikel"
-                        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="?actionBarSize"
+                    android:padding="16dp"
+                    android:textColor="@android:color/white"
+                    android:text="Detail Artikel"
+                    android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
 
-                </LinearLayout>
+            </LinearLayout>
 
-            </com.google.android.material.appbar.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
-            <ImageView
-                android:id="@+id/imgDetail"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@color/colorGreen"/>
-
-            <TextView
-                android:id="@+id/tvTitleDetail"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="22sp"
-                android:padding="16dp"/>
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvDescDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/desc"
-                android:textColor="@android:color/black"
-                android:padding="16dp"/>
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/tvTitleDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:padding="16dp"/>
+
+                <TextView
+                    android:id="@+id/tvDescDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desc"
+                    android:textColor="@android:color/black"
+                    android:padding="16dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
 
 
-    </FrameLayout>
 
-
-
-</ScrollView>
+</FrameLayout>

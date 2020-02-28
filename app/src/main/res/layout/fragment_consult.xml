@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.ConsultFragment">
+    tools:context=".Fragment.ConsultFragment"
+    android:background="@android:color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJob"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Consulr fragmenr" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="133dp">
 
-</FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_square_rounded_darkgrey"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="68dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/txtMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="20dp"
+            android:inputType="textLongMessage"
+            android:maxLines="1"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:hint="Pesan"
+            android:textColorHint="#aeafaf"
+            android:textSize="15sp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_round_button"
+            android:src="@drawable/ic_send_24px"
+            android:layout_marginEnd="10dp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

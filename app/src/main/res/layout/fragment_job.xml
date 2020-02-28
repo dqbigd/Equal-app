@@ -20,7 +20,7 @@
             android:gravity="center"
             android:padding="16dp"
             android:textColor="@android:color/white"
-            android:text="Lowongan Kerja"
+            android:text="@string/lowongan_kerja"
             android:textSize="25sp"
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
@@ -31,7 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_job"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="48dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

@@ -24,6 +24,7 @@ import com.example.equal.Model.Job;
 import com.example.equal.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;

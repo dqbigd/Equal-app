@@ -9,4 +9,6 @@
     <string name="title">Title</string>
     <string name="desc">Desc</string>
     <string name="artikel_terbaru">Artikel Terbaru</string>
+    <string name="lowongan_kerja">Lowongan Kerja</string>
+    <string name="konsultasi">Konsultasi</string>
 </resources>
