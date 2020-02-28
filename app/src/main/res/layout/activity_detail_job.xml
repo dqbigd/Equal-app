@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailJobActivity">
+
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/square_pink_no_radius_top">
+    </ImageView>
+
+    <ImageButton
+        android:id="@+id/imgBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:padding="16dp"
+        android:src="@drawable/ic_keyboard_arrow_left_24px">
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/tvtitledetailjob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Life Designer"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginStart="68dp"
+        app:layout_constraintStart_toStartOf="@id/imgBackButton"
+        tools:layout_editor_absoluteY="14dp" />
+
+    <TextView
+        android:id="@+id/tvptjob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BNI Life Insurance PT"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="68dp"
+        app:layout_constraintStart_toStartOf="@id/imgBackButton"
+        app:layout_constraintTop_toBottomOf="@id/tvtitledetailjob"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jakarta Selatan"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="68dp"
+        app:layout_constraintStart_toStartOf="@id/imgBackButton"
+        app:layout_constraintTop_toBottomOf="@id/tvptjob"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgJob"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        tools:src="@android:color/darker_gray"
+        android:layout_marginStart="84dp"
+        tools:layout_editor_absoluteY="14dp"
+        app:layout_constraintStart_toEndOf="@id/tvptjob"/>
+
+    <TextView
+        android:id="@+id/tvbidang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:textAlignment="inherit"
+        android:text="Bidang Pekerjaan:
+Sales and Marketing
+                                                                     Gaji:
+IDR 4.000.000 – 7.350.000"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv1"
+        />
+
+    <ImageView
+        android:id="@+id/separator_1"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvbidang"
+        android:background="@color/colorGrayLight" />
+
+    <TextView
+        android:id="@+id/tvdeskripsi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textAlignment="inherit"
+        android:text="Deskripsi Pekerjaan"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator_1"/>
+
+    <TextView
+        android:id="@+id/txtdeskrpsi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="inherit"
+        android:text="Membuat perencanaan kegiatan pemasaran Asuransi ke Perusahaan-Perusahaan non BNI,
+Bersedia bekerja diluar kantor (lapangan),
+Melakukan monitoring & review target
+"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvdeskripsi"
+        />
+
+    <TextView
+        android:id="@+id/tvsyarat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textAlignment="inherit"
+        android:text="Persyaratan"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtdeskrpsi"/>
+
+    <TextView
+        android:id="@+id/txtsyarat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="inherit"
+        android:text="WORKSITE OPEN MARKET
+Representative BNI Life yang bertugas melakukan pemasaran
+produk-produk Asuransi kepada karyawan di perusahaan - .
+Rencana Penempatan : HEAD OFFICE
+"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvsyarat"
+        />
+
+    <TextView
+        android:id="@+id/tvKualifikasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textAlignment="inherit"
+        android:text="Kualifikasi "
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtsyarat"/>
+
+    <TextView
+        android:id="@+id/txtkualifikasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="inherit"
+        android:text="Usia 22 – 32 tahun
+Berpengalaman 2 tahun dibidang Financial Industri
+(Banking, Insurance, Financial Company)
+Pendidikan S1/D3 semua jurusan
+Berpenampilan menarik & rapi
+Memiliki kemampuan presentasi dan sosialisasi program yang baik
+Tidak terdaftar AAJI aktif di perusahaan asuransi lain
+"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvKualifikasi"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
