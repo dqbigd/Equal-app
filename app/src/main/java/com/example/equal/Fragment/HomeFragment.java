@@ -16,16 +16,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.equal.Api.ApiClient;
 import com.example.equal.Api.ApiInterface;
-import com.example.equal.ArticleAdapter;
+import com.example.equal.Adapter.ArticleAdapter;
 import com.example.equal.LaporActivity;
 import com.example.equal.Model.Article;
 import com.example.equal.R;
-import com.example.equal.SignUpActivity;
 
 import java.util.ArrayList;
 import java.util.List;

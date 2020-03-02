@@ -13,7 +13,7 @@
     android:paddingRight="16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgJob"
+        android:id="@+id/imgCompanyLogo"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="16dp"
@@ -23,18 +23,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@id/imgJob"
-        android:layout_toRightOf="@id/imgJob"
+        android:layout_toEndOf="@id/imgCompanyLogo"
+        android:layout_toRightOf="@id/imgCompanyLogo"
         android:orientation="vertical">
         <TextView
             android:id="@+id/tvTitleJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tvCompany"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
-            tools:text="Title" />
+            tools:text="Company" />
 
         <LinearLayout
             android:layout_width="match_parent"

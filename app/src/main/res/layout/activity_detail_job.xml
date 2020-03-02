@@ -10,6 +10,7 @@
         android:id="@+id/iv1"
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/square_pink_no_radius_top">
     </ImageView>
 
@@ -18,46 +19,51 @@
         android:layout_width="wrap_content"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:clickable="true"
         android:padding="16dp"
         android:src="@drawable/ic_keyboard_arrow_left_24px">
     </ImageButton>
 
     <TextView
-        android:id="@+id/tvtitledetailjob"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Life Designer"
+        android:text="@string/life_designer"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginStart="68dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/imgBackButton"
         tools:layout_editor_absoluteY="14dp" />
 
     <TextView
-        android:id="@+id/tvptjob"
+        android:id="@+id/tvCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BNI Life Insurance PT"
+        android:text="@string/bni_life_insurance_pt"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:layout_marginStart="68dp"
         app:layout_constraintStart_toStartOf="@id/imgBackButton"
-        app:layout_constraintTop_toBottomOf="@id/tvtitledetailjob"/>
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
 
     <TextView
+        android:id="@+id/tvCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jakarta Selatan"
+        android:text="@string/jakarta_selatan"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:layout_marginStart="68dp"
         app:layout_constraintStart_toStartOf="@id/imgBackButton"
-        app:layout_constraintTop_toBottomOf="@id/tvptjob"/>
+        app:layout_constraintTop_toBottomOf="@id/tvCompany"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgJob"
+        android:id="@+id/imgCompanyLogo"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="16dp"
@@ -65,32 +71,62 @@
         tools:src="@android:color/darker_gray"
         android:layout_marginStart="84dp"
         tools:layout_editor_absoluteY="14dp"
-        app:layout_constraintStart_toEndOf="@id/tvptjob"/>
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCompany"/>
 
     <TextView
-        android:id="@+id/tvbidang"
-        android:layout_width="0dp"
+        android:id="@+id/tvBidangPekerjaan"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:textAlignment="inherit"
-        android:text="Bidang Pekerjaan:
-Sales and Marketing
-                                                                     Gaji:
-IDR 4.000.000 – 7.350.000"
+        android:text="@string/bidang_pekerjaan"
         android:textSize="16sp"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv1" />
+
+    <TextView
+        android:id="@+id/tvFieldOfWork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@id/tvBidangPekerjaan"
         app:layout_constraintTop_toBottomOf="@id/iv1"
-        />
+        app:layout_constraintBottom_toTopOf="@id/tvSalary"
+        android:text="@string/it"/>
+
+    <TextView
+        android:id="@+id/tvIDR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/idr"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBidangPekerjaan" />
+
+    <TextView
+        android:id="@+id/tvSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@id/tvIDR"
+        app:layout_constraintTop_toBottomOf="@id/tvBidangPekerjaan"
+        android:text="@string/salary"/>
+
 
     <ImageView
         android:id="@+id/separator_1"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvbidang"
+        app:layout_constraintTop_toBottomOf="@id/tvIDR"
         android:background="@color/colorGrayLight" />
 
     <TextView
@@ -100,7 +136,7 @@ IDR 4.000.000 – 7.350.000"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:textAlignment="inherit"
-        android:text="Deskripsi Pekerjaan"
+        android:text="@string/deskripsi_pekerjaan"
         android:textStyle="bold"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -108,23 +144,19 @@ IDR 4.000.000 – 7.350.000"
         app:layout_constraintTop_toBottomOf="@id/separator_1"/>
 
     <TextView
-        android:id="@+id/txtdeskrpsi"
+        android:id="@+id/tvDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:textAlignment="inherit"
-        android:text="Membuat perencanaan kegiatan pemasaran Asuransi ke Perusahaan-Perusahaan non BNI,
-Bersedia bekerja diluar kantor (lapangan),
-Melakukan monitoring & review target
-"
+        android:text="@string/pekerjaan_desc"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvdeskripsi"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvdeskripsi" />
 
     <TextView
         android:id="@+id/tvsyarat"
@@ -133,32 +165,27 @@ Melakukan monitoring & review target
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:textAlignment="inherit"
-        android:text="Persyaratan"
+        android:text="@string/persyaratan"
         android:textStyle="bold"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtdeskrpsi"/>
+        app:layout_constraintTop_toBottomOf="@id/tvDesc"/>
 
     <TextView
-        android:id="@+id/txtsyarat"
+        android:id="@+id/tvRequirement"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:textAlignment="inherit"
-        android:text="WORKSITE OPEN MARKET
-Representative BNI Life yang bertugas melakukan pemasaran
-produk-produk Asuransi kepada karyawan di perusahaan - .
-Rencana Penempatan : HEAD OFFICE
-"
+        android:text="@string/persyaratan_desc"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvsyarat"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvsyarat" />
 
     <TextView
         android:id="@+id/tvKualifikasi"
@@ -167,35 +194,27 @@ Rencana Penempatan : HEAD OFFICE
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:textAlignment="inherit"
-        android:text="Kualifikasi "
+        android:text="@string/kualifikasi"
         android:textStyle="bold"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtsyarat"/>
+        app:layout_constraintTop_toBottomOf="@id/tvRequirement"/>
 
     <TextView
-        android:id="@+id/txtkualifikasi"
+        android:id="@+id/tvQualification"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:textAlignment="inherit"
-        android:text="Usia 22 – 32 tahun
-Berpengalaman 2 tahun dibidang Financial Industri
-(Banking, Insurance, Financial Company)
-Pendidikan S1/D3 semua jurusan
-Berpenampilan menarik & rapi
-Memiliki kemampuan presentasi dan sosialisasi program yang baik
-Tidak terdaftar AAJI aktif di perusahaan asuransi lain
-"
+        android:text="@string/kualifikasi_desc"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvKualifikasi"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvKualifikasi" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

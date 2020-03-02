@@ -3,6 +3,8 @@ package com.example.equal.Api;
 import com.example.equal.Model.Article;
 import com.example.equal.Model.Job;
 import com.example.equal.Model.User;
+import com.example.equal.Savejob.ResponeSaveJob;
+import com.example.equal.Savejob.ResultSaveJob;
 
 import java.util.List;
 
@@ -11,6 +13,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Url;
 
 public interface ApiInterface {
     String key_api = "PdSgVkYp3s6v9y$B";
@@ -31,4 +34,14 @@ public interface ApiInterface {
 
     @GET(key_api+"/job/")
     Call<List<Job>> getJob();
+
+    @FormUrlEncoded
+    @POST(key_api+"/job_user/save")
+    Call<ResultSaveJob> setSaveJob(@Field("user_id") Integer user_id,
+                                   @Field("job_id") Integer job_id);
+
+    @GET
+    Call<ResponeSaveJob> getSaveJob(@Url String url);
+
+
 }

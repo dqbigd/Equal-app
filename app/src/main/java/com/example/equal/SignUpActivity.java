@@ -90,11 +90,13 @@ public class SignUpActivity extends AppCompatActivity {
                     if (response.isSuccessful()){
                         response.body();
                         Toast.makeText(SignUpActivity.this, "SignUp successfully !", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getBaseContext(), LoginActivity.class));
-                        finish();
+//                        Intent i = new Intent(SignUpActivity.this, LoginActivity.class);
+//                        startActivity(i);
+                        Log.d("response", response.message());
+
                     }else {
                         Toast.makeText(SignUpActivity.this, response.errorBody().toString(), Toast.LENGTH_SHORT).show();
-                        Log.d("SignUp not resp", response.errorBody().toString());
+                        Log.d("SignUp not response", response.errorBody().toString());
                     }
                 }
 

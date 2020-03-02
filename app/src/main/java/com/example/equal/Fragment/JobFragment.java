@@ -18,13 +18,11 @@ import android.widget.Toast;
 
 import com.example.equal.Api.ApiClient;
 import com.example.equal.Api.ApiInterface;
-import com.example.equal.JobAdapter;
-import com.example.equal.Model.Article;
+import com.example.equal.Adapter.JobAdapter;
 import com.example.equal.Model.Job;
 import com.example.equal.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;

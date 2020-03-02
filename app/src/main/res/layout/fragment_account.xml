@@ -68,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Nama"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/colorPrimary"/>
 
                 <TextView
@@ -78,14 +78,14 @@
                     android:text="Marina Putri"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Email"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/colorPrimary"/>
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="MarinaPutri@gmail.com"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@android:color/black"/>
 
             </LinearLayout>
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:text="Edit Profil"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:padding="16dp"
                     android:background="?android:attr/selectableItemBackground"/>
 
@@ -129,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Loker Tersimpan"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/colorPrimary"
                     android:padding="16dp"
                     android:background="?android:attr/selectableItemBackground"/>
@@ -147,7 +147,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Keluar"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/colorPrimary"
                     android:padding="16dp"
                     android:background="?android:attr/selectableItemBackground"/>

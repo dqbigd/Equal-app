@@ -32,8 +32,8 @@ public class Preferences  {
         return status;
     }
 
-    public String getUserId(){
-        String id = preference.getString(ID, "");
+    public Integer getUserId(){
+        Integer id = preference.getInt(ID, 0);
 
         return id;
     }

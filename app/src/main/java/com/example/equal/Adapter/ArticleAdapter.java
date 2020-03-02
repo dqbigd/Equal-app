@@ -1,4 +1,4 @@
-package com.example.equal;
+package com.example.equal.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.equal.DetailArticleActivity;
 import com.example.equal.Model.Article;
+import com.example.equal.R;
 
 import java.util.ArrayList;
 

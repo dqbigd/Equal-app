@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.equal.LoginActivity;
 import com.example.equal.Preferences;
 import com.example.equal.R;
+import com.example.equal.SaveJobActivity;
 
 
 /**
@@ -44,6 +45,14 @@ public class AccountFragment extends Fragment {
         tvNamaAccount.setText(preferences.getName());
         tvNama.setText(preferences.getName());
         tvEmail.setText(preferences.getEmail());
+
+        lyLokerSimpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), SaveJobActivity.class);
+                startActivity(i);
+            }
+        });
 
         lyKeluar.setOnClickListener(new View.OnClickListener() {
             @Override

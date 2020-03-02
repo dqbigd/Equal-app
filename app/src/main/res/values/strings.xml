@@ -11,4 +11,17 @@
     <string name="artikel_terbaru">Artikel Terbaru</string>
     <string name="lowongan_kerja">Lowongan Kerja</string>
     <string name="konsultasi">Konsultasi</string>
+    <string name="kualifikasi_desc"><![CDATA[Usia 22 – 32 tahun Berpengalaman 2 tahun dibidang Financial Industri (Banking, Insurance, Financial Company) Pendidikan S1/D3 semua jurusan Berpenampilan menarik & rapi Memiliki kemampuan presentasi dan sosialisasi program yang baik Tidak terdaftar AAJI aktif di perusahaan asuransi lain]]></string>
+    <string name="kualifikasi">Kualifikasi</string>
+    <string name="persyaratan_desc">WORKSITE OPEN MARKET Representative BNI Life yang bertugas melakukan pemasaran produk-produk Asuransi kepada karyawan di perusahaan - . Rencana Penempatan : HEAD OFFICE</string>
+    <string name="persyaratan">Persyaratan</string>
+    <string name="pekerjaan_desc"><![CDATA[Membuat perencanaan kegiatan pemasaran Asuransi ke Perusahaan-Perusahaan non BNI, Bersedia bekerja diluar kantor (lapangan), Melakukan monitoring & review target]]></string>
+    <string name="deskripsi_pekerjaan">Deskripsi Pekerjaan</string>
+    <string name="life_designer">Life Designer</string>
+    <string name="bni_life_insurance_pt">BNI Life Insurance PT</string>
+    <string name="jakarta_selatan">Jakarta Selatan</string>
+    <string name="idr">IDR.</string>
+    <string name="it">IT</string>
+    <string name="bidang_pekerjaan">Bidang Pekerjaan :</string>
+    <string name="salary">1.000.000 - 4.000.000</string>
 </resources>

@@ -3,7 +3,7 @@ package com.example.equal.Savejob;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SaveJob {
+public class ResultSaveJob {
 
     @SerializedName("id")
     @Expose

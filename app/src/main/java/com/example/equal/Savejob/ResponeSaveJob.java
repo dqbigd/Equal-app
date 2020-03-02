@@ -1,4 +1,4 @@
-package com.example.equal.Api;
+package com.example.equal.Savejob;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
@@ -26,7 +26,7 @@ public class ResponeSaveJob {
     private String updatedAt;
     @SerializedName("job")
     @Expose
-    private List<Job> job = null;
+    private List<ResultSaveJob> resultSaveJob = null;
 
     public Integer getId() {
         return id;
@@ -76,12 +76,12 @@ public class ResponeSaveJob {
         this.updatedAt = updatedAt;
     }
 
-    public List<Job> getJob() {
-        return job;
+    public List<ResultSaveJob> getResultSaveJob() {
+        return resultSaveJob;
     }
 
-    public void setJob(List<Job> job) {
-        this.job = job;
+    public void setResultSaveJob(List<ResultSaveJob> resultSaveJob) {
+        this.resultSaveJob = resultSaveJob;
     }
 
 }
