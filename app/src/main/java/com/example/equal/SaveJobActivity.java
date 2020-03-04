@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.example.equal.Adapter.SaveJobAdapter;
 import com.example.equal.Api.ApiClient;
 import com.example.equal.Api.ApiInterface;
-import com.example.equal.Savejob.ResponeSaveJob;
+import com.example.equal.Savejob.ResponseSaveJob;
 import com.example.equal.Savejob.ResultSaveJob;
 
 import java.util.ArrayList;
@@ -67,10 +67,10 @@ public class SaveJobActivity extends AppCompatActivity {
         dialog.setCancelable(true);
         dialog.show();
 
-        Call<ResponeSaveJob> call = apiInterface.getSaveJob(key_api+"/job_user/"+user_id);
-        call.enqueue(new Callback<ResponeSaveJob>() {
+        Call<ResponseSaveJob> call = apiInterface.getSaveJob(key_api+"/job_user/"+user_id);
+        call.enqueue(new Callback<ResponseSaveJob>() {
             @Override
-            public void onResponse(Call<ResponeSaveJob> call, Response<ResponeSaveJob> response) {
+            public void onResponse(Call<ResponseSaveJob> call, Response<ResponseSaveJob> response) {
                 if(response.isSuccessful()){
                     if(response.body().getId().equals(user_id)){
 //                    response.body().getResultSaveJob();
@@ -89,7 +89,7 @@ public class SaveJobActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ResponeSaveJob> call, Throwable t) {
+            public void onFailure(Call<ResponseSaveJob> call, Throwable t) {
                 Log.d("Failure Load", t.getMessage());
             }
         });

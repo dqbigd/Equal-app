@@ -1,9 +1,11 @@
 package com.example.equal.Api;
 
+import com.example.equal.Chat.Chat;
+import com.example.equal.Chat.ResponseChat;
 import com.example.equal.Model.Article;
 import com.example.equal.Model.Job;
 import com.example.equal.Model.User;
-import com.example.equal.Savejob.ResponeSaveJob;
+import com.example.equal.Savejob.ResponseSaveJob;
 import com.example.equal.Savejob.ResultSaveJob;
 
 import java.util.List;
@@ -41,7 +43,14 @@ public interface ApiInterface {
                                    @Field("job_id") Integer job_id);
 
     @GET
-    Call<ResponeSaveJob> getSaveJob(@Url String url);
+    Call<ResponseSaveJob> getSaveJob(@Url String url);
 
+    @FormUrlEncoded
+    @POST(key_api+"/chat")
+    Call<Chat> setChat(@Field("user_id") Integer user_id,
+                       @Field("message") String message,
+                       @Field("type") Integer type);
 
+    @GET
+    Call<ResponseChat> getChat(@Url String url);
 }

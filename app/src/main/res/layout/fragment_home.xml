@@ -34,7 +34,7 @@
                 android:clickable="true"
                 android:padding="16dp"
                 android:layout_weight="0.2"
-                android:src="@drawable/dummy_photo">
+                android:src="@drawable/dummy_photo2">
 
             </de.hdodenhof.circleimageview.CircleImageView>
 

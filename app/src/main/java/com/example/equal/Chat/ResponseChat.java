@@ -1,10 +1,10 @@
-package com.example.equal.Savejob;
+package com.example.equal.Chat;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ResponeSaveJob {
+public class ResponseChat {
 
     @SerializedName("_id")
     @Expose
@@ -24,9 +24,9 @@ public class ResponeSaveJob {
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
-    @SerializedName("job")
+    @SerializedName("chat")
     @Expose
-    private List<ResultSaveJob> resultSaveJob = null;
+    private List<Chat> chat = null;
 
     public Integer getId() {
         return id;
@@ -76,12 +76,12 @@ public class ResponeSaveJob {
         this.updatedAt = updatedAt;
     }
 
-    public List<ResultSaveJob> getResultSaveJob() {
-        return resultSaveJob;
+    public List<Chat> getChat() {
+        return chat;
     }
 
-    public void setResultSaveJob(List<ResultSaveJob> resultSaveJob) {
-        this.resultSaveJob = resultSaveJob;
+    public void setChat(List<Chat> chat) {
+        this.chat = chat;
     }
 
 }

@@ -7,7 +7,7 @@
     android:background="@android:color/white">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvJob"
+        android:id="@+id/rvChat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="133dp">
