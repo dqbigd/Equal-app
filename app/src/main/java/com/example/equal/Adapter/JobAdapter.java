@@ -32,6 +32,7 @@ import retrofit2.Response;
 
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
     private ArrayList<Job> listJob;
+//    private ArrayList<ResultSaveJob> listSaveJob;
     private Context context;
     private String title, company, photo_logo,city, field, salary, desc, requirements, qualification;
     private Integer job_id, user_id;
@@ -114,10 +115,20 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
         holder.btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Boolean notyet = true;
+
                 user_id = preferences.getUserId();
                 job_id = listJob.get(holder.getAdapterPosition()).getId();
+
+//                for (int i = 0;i>listJob.size();i++){
+//                    Log.d("sebelum add", listSaveJob.get(i).getId().toString());
+//                }
+
 //                Toast.makeText(holder.itemView.getContext(), String.valueOf(job_id)+user_id, Toast.LENGTH_SHORT).show();
 
+//                if (notyet){
+//
+//                }
                 Call<ResultSaveJob> call = apiInterface.setSaveJob(user_id, job_id);
                 call.enqueue(new Callback<ResultSaveJob>() {
                     @Override

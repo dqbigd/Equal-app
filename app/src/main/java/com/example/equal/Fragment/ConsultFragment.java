@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -71,7 +72,13 @@ public class ConsultFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 sendChatUser();
-                sendChatBot();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        sendChatBot();
+                    }
+                },3000);
+
             }
         });
 
@@ -79,38 +86,59 @@ public class ConsultFragment extends Fragment {
     }
 
     private void sendChatBot() {
-        String notreply = chatList.get(chatList.size()-1).getMessage();
+        String notreply = "Maaf saya tidak dapat mengetahui apa yang anda maksud, bisa ulangi yang anda maksut?";
+        Boolean tanggapan = false;
+
+        if(chatList.get(chatList.size()-1).getType() == 1){
+            notreply = "";
+        }else{
+            notreply = chatList.get(chatList.size()-1).getMessage();
+        }
+
+        Log.d("bot chat", notreply);
         Preferences preferences = new Preferences(getContext());
         user_id = preferences.getUserId();
         type = 1;
 
         if (notreply.toLowerCase().contains("halo".toLowerCase())) {
             message = "Halo, Selamat datang di Fitur Konsultasi kami, ada yang bisa kami bantu?";
+            tanggapan = true;
         }else if (notreply.toLowerCase().contains("mengalami masalah".toLowerCase()) &&
-                (notreply.toLowerCase().contains("pernikahan di usia dini".toLowerCase()) || notreply.toLowerCase().contains("pernikahan usia dini".toLowerCase()))) {
+                (notreply.toLowerCase().contains("pernikahan di usia dini".toLowerCase()) || notreply.toLowerCase().contains("pernikahan usia dini".toLowerCase()) || notreply.toLowerCase().contains("pernikahan dini".toLowerCase()))) {
             message = "silahkan keluhkan masalah anda disini,kami akan membantu memberi yang anda butuhkan";
+            tanggapan = true;
         }else if(notreply.toLowerCase().contains("bagaimana cara mengatasi".toLowerCase()) &&
                 (notreply.toLowerCase().contains("kdrt".toLowerCase()) || notreply.toLowerCase().contains("kekerasan dalam rumah tangga".toLowerCase()))) {
             message = " Ada beberapa cara mengatasi kdrt : \n1. Istri dan suami melakukan komunikasi yang intens, \n2. Selesaikan masalah Kdrt dengan kepala dingin"
                     + "\n3. Meminta Solusi kepada kerabat dekat yang bisa untuk mengatasi masalah, \n4. Jika sudah parah seperti luka - luka,maka lakukan visum dan laporkan kepada pihak yang berwajib";
+            tanggapan = true;
         }else if(notreply.toLowerCase().contains("bagaimana mencegah".toLowerCase()) &&
                 (notreply.toLowerCase().contains("kdrt".toLowerCase()) || notreply.toLowerCase().contains("kekerasan dalam rumah tangga".toLowerCase()))){
             message = "Cara untuk mencegah timbulnya kdrt : \n1. menerapkan pendidikan agama dan moral dalam rumah tangga \n2. menerapkan komunikasi timbal balik antarsesama keluarga"
                     + "\n3. Harus adanya saling kepedulian antaranggota keluarga";
+            tanggapan = true;
         }else if(notreply.toLowerCase().contains("Apa dampak".toLowerCase()) &&
                 (notreply.toLowerCase().contains("kdrt".toLowerCase()) || notreply.toLowerCase().contains("kekerasan dalam rumah tangga".toLowerCase()))){
             message = "Berikut adalah dampak dari kdrt : \n1. Trauma \n2. Mental lemah \n3. Ketakutan \n4. Paranoid ";
+            tanggapan = true;
         }else if(notreply.toLowerCase().contains("Apa bahaya".toLowerCase()) &&
                 (notreply.toLowerCase().contains("Pernikahan dini".toLowerCase()) || notreply.toLowerCase().contains("pernikahan di usia dini".toLowerCase()))){
             message = "bahaya dalam pernikahan dini menyebabkan terganggunya kesehatan psikis atau mental wanita, salah satu ancamannya adalah wanita muda "
                     + " rentan menjadi korban kekerasan dalam rumah tangga dan mereka tidak memiliki pengetahuan bagaimana caranya terbebas dari kekerasan tersebut"
                     + "pernikahan dini juga mengancam kesejahtaraan anak karena menyebabkan kemiskinan akibat perampasan hak anak untuk bertumbuh kembang,meraih pendidikan,dan bekerja ";
+            tanggapan = true;
         }else if(notreply.toLowerCase().contains("Berapa usia ideal".toLowerCase()) &&
                 (notreply.toLowerCase().contains("menikah".toLowerCase()) || notreply.toLowerCase().contains("pernikahan di usia dini".toLowerCase()))){
             message = " Baiknya menikah itu dilakukan pada usia matang 20 hingga 21 tahun untuk perempuan dan 25 tahun untuk laki-laki, usia kurang dari 18 tahun"
                     + "masih dikatakan anak - anak.";
+            tanggapan = true;
         }else if (notreply.toLowerCase().contains("terima kasih".toLowerCase())) {
             message = "Sama - sama, Ada yang ingin dikonsultasikan lagi? jika tidak kami akan mengakhiri konsultasi ini";
+            tanggapan = true;
+        }
+
+        if(!tanggapan){
+            message = "Maaf saya tidak dapat mengetahui apa yang anda maksud, bisa ulangi yang anda maksut?";
         }
 
         Call<Chat> call = apiInterface.setChat(user_id, message,type);
