@@ -103,7 +103,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
                 String message = "Perkenalkan nama saya "+preferences.getName()+", ingin melakukan lamaran kerja pada perusahaan "+job.getCompany()+" dibidang "+job.getFieldOfWork();
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {recipients});
                 intent.putExtra(Intent.EXTRA_SUBJECT, subject);
                 intent.putExtra(Intent.EXTRA_TEXT, message);
 

@@ -100,19 +100,19 @@ public class ConsultFragment extends Fragment {
         user_id = preferences.getUserId();
         type = 1;
 
-        if (notreply.toLowerCase().contains("halo".toLowerCase())) {
+        if (notreply.toLowerCase().contains("halo".toLowerCase()) || notreply.toLowerCase().contains("hai".toLowerCase()) || notreply.toLowerCase().contains("hi".toLowerCase())) {
             message = "Halo, Selamat datang di Fitur Konsultasi kami, ada yang bisa kami bantu?";
             tanggapan = true;
         }else if (notreply.toLowerCase().contains("mengalami masalah".toLowerCase()) &&
                 (notreply.toLowerCase().contains("pernikahan di usia dini".toLowerCase()) || notreply.toLowerCase().contains("pernikahan usia dini".toLowerCase()) || notreply.toLowerCase().contains("pernikahan dini".toLowerCase()))) {
             message = "silahkan keluhkan masalah anda disini,kami akan membantu memberi yang anda butuhkan";
             tanggapan = true;
-        }else if(notreply.toLowerCase().contains("bagaimana cara mengatasi".toLowerCase()) &&
+        }else if((notreply.toLowerCase().contains("bagaimana".toLowerCase()) && notreply.toLowerCase().contains("mengatasi".toLowerCase())) &&
                 (notreply.toLowerCase().contains("kdrt".toLowerCase()) || notreply.toLowerCase().contains("kekerasan dalam rumah tangga".toLowerCase()))) {
             message = " Ada beberapa cara mengatasi kdrt : \n1. Istri dan suami melakukan komunikasi yang intens, \n2. Selesaikan masalah Kdrt dengan kepala dingin"
                     + "\n3. Meminta Solusi kepada kerabat dekat yang bisa untuk mengatasi masalah, \n4. Jika sudah parah seperti luka - luka,maka lakukan visum dan laporkan kepada pihak yang berwajib";
             tanggapan = true;
-        }else if(notreply.toLowerCase().contains("bagaimana mencegah".toLowerCase()) &&
+        }else if(notreply.toLowerCase().contains("bagaimana".toLowerCase()) && notreply.toLowerCase().contains("mencegah".toLowerCase()) &&
                 (notreply.toLowerCase().contains("kdrt".toLowerCase()) || notreply.toLowerCase().contains("kekerasan dalam rumah tangga".toLowerCase()))){
             message = "Cara untuk mencegah timbulnya kdrt : \n1. menerapkan pendidikan agama dan moral dalam rumah tangga \n2. menerapkan komunikasi timbal balik antarsesama keluarga"
                     + "\n3. Harus adanya saling kepedulian antaranggota keluarga";
@@ -127,8 +127,8 @@ public class ConsultFragment extends Fragment {
                     + " rentan menjadi korban kekerasan dalam rumah tangga dan mereka tidak memiliki pengetahuan bagaimana caranya terbebas dari kekerasan tersebut"
                     + "pernikahan dini juga mengancam kesejahtaraan anak karena menyebabkan kemiskinan akibat perampasan hak anak untuk bertumbuh kembang,meraih pendidikan,dan bekerja ";
             tanggapan = true;
-        }else if(notreply.toLowerCase().contains("Berapa usia ideal".toLowerCase()) &&
-                (notreply.toLowerCase().contains("menikah".toLowerCase()) || notreply.toLowerCase().contains("pernikahan di usia dini".toLowerCase()))){
+        }else if(notreply.toLowerCase().contains("Berapa usia".toLowerCase()) &&
+                (notreply.toLowerCase().contains("menikah".toLowerCase()) || notreply.toLowerCase().contains("nikah".toLowerCase() ) || notreply.toLowerCase().contains("pernikahan".toLowerCase() ))){
             message = " Baiknya menikah itu dilakukan pada usia matang 20 hingga 21 tahun untuk perempuan dan 25 tahun untuk laki-laki, usia kurang dari 18 tahun"
                     + "masih dikatakan anak - anak.";
             tanggapan = true;
