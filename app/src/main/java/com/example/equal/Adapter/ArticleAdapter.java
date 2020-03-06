@@ -42,7 +42,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
 
         //link sementara
         String link = article.getPhoto();
-        link = "http://10.0.2.2:8000/images/articles/"+link;
+        link = "https://equal.lug-surabaya.com/images/articles/"+link;
         Log.d("link", link);
 
         Glide.with(holder.itemView.getContext())

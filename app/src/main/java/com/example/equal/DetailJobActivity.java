@@ -54,7 +54,7 @@ public class DetailJobActivity extends AppCompatActivity {
 
         //link sementara
         String link = photo_logo;
-        link = "http://10.0.2.2:8000/images/articles/"+link;
+        link = "https://equal.lug-surabaya.com/images/jobs/"+link;
         Log.d("link", link);
 
         Glide.with(getBaseContext())

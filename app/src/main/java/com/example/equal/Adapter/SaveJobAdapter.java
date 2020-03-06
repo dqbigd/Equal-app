@@ -43,7 +43,7 @@ public class SaveJobAdapter extends RecyclerView.Adapter<SaveJobAdapter.SaveJobH
 
         //link sementara
         String link = saveJob.getPhotoLogo();
-        link = "http://10.0.2.2:8000/images/jobs/"+link;
+        link = "https://equal.lug-surabaya.com/images/jobs/"+link;
         Log.d("link", link);
 
         Glide.with(holder.itemView.getContext())

@@ -58,7 +58,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
 
         //link sementara
         String link = job.getPhotoLogo();
-        link = "http://10.0.2.2:8000/images/jobs/"+link;
+        link = "https://equal.lug-surabaya.com/images/jobs/"+link;
         Log.d("link", link);
 
         Glide.with(holder.itemView.getContext())
