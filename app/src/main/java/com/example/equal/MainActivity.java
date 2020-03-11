@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -23,8 +26,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
 
-        loadFragment(new HomeFragment());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+        if(isConnected(getBaseContext())){
+            loadFragment(new HomeFragment());
+        }else{
+            loadFragment(new NoInternetFragment());
+        }
     }
 
     private boolean loadFragment(Fragment fragment){
@@ -45,15 +53,26 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (menuItem.getItemId()){
             case R.id.menu_home:
-                fragment = new HomeFragment();
+                if(isConnected(getBaseContext())){
+                    fragment = new HomeFragment();
+                }else{
+                    fragment = new NoInternetFragment();
+                }
                 break;
             case R.id.menu_consult:
-                fragment = new ConsultFragment();
+                if(isConnected(getBaseContext())){
+                    fragment = new ConsultFragment();
+                }else{
+                    fragment = new NoInternetFragment();
+                }
                 break;
             case R.id.menu_job:
-                fragment = new JobFragment();
+                if(isConnected(getBaseContext())){
+                    fragment = new JobFragment();
+                }else{
+                    fragment = new NoInternetFragment();
+                }
                 break;
-
             case R.id.menu_account:
                 fragment = new AccountFragment();
                 break;
@@ -61,4 +80,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         return loadFragment(fragment);
     }
+
+
+    public boolean isConnected(Context context) {
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            if((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting())){
+                return true;
+            }
+        }
+            return false;
+    }
+
+
 }
