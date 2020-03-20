@@ -33,7 +33,9 @@ public class NoInternetFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = getActivity().getIntent();
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 getActivity().finish();
+                getActivity().overridePendingTransition(0, 0);
                 startActivity(intent);
             }
         });
