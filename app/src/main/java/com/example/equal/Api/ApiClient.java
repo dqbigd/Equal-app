@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    private static String BASE_URL = "https://equal.lug-surabaya.com/api/";
+    private static String BASE_URL = "URL_API_HERE";
 
     public static Retrofit getRetrofit(){
         return new Retrofit.Builder()
