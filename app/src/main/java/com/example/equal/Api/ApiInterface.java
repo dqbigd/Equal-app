@@ -18,7 +18,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Url;
 
 public interface ApiInterface {
-    String key_api = "PdSgVkYp3s6v9y$B";
+    String key_api = "KEY_API_HERE";
 
     @FormUrlEncoded
     @POST("register")
